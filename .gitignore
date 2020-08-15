@@ -3,6 +3,6 @@
 /data/data.csv
 data.csv
 
-*.csv
 /output.pdf
+output_*.pdf
 output.pdf

@@ -1,0 +1,180 @@
+<html><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+            <!-- <link type="text/css" rel="stylesheet" href="temp2_files/style2.css"> -->
+        <title>Email signature template</title></head>
+        
+        
+        <body>
+                        
+            <form>
+                <input type=button name=print value="Print page" onClick="window.print()">
+            </form>
+            <br><br>
+
+            
+            {% for data in entries %}
+    
+                <table id="table-content" style="    font-family: Verdana, sans-serif;
+                width:530px;
+                font-size:10pt;
+                color:#7e2c55;" cellspacing="4" cellpadding="0">
+                <tr>
+                    <!-- LOGO -->
+                    <td id="logo-td" rowspan="5" style="vertical-align:top; 
+                        width:125px;
+                        border-right:2px solid rgb(149, 159, 250);" width="150" valign="top">
+                            <img alt="Logo" style="width:105px; border:0;" src="{{ url_for('static', filename='assets/Team-Grizzly.png') }}" width="123" border="0">
+                    </td>
+                    
+                    <!-- NAME -->
+                    <td id="name-td" style="    font-family: Verdana, sans-serif;
+                        padding:0;
+                        padding-left: 3px;
+                        line-height:14px;
+                        vertical-align:top;
+                        font-size:14pt; color:#7e2c55;
+                        margin-left: 20px;" valign="top"> 
+                        <strong><span id="name" style="font-family:Verdana, sans-serif;font-size:14pt;color: rgb(65, 64, 64);">{{data.name}}</span></strong>
+                        <span style="font-family:Verdana, sans-serif;font-size:8pt;color: rgb(0, 0, 0); font-style: italic;">aka</span>
+                        <span style="font-family: Verdana, sans-serif; font-size:14pt;color: rgb(255, 0, 0); "><b>{{data.nickname}}</b></span>
+                    </td>		
+                </tr>	
+                <tr>
+                    <!-- ROLE -->
+                    <td id="role-td" style="font-family:Verdana, sans-serif;
+                    padding:0;
+                    padding-left: 3px;
+                    line-height:8px;
+                    vertical-align:top;
+                    color:#000000;
+                    font-size:10pt;" valign="top"> 
+                        <span class="span-st" style="font-family:Verdana, sans-serif;font-size:10pt;color:#2c2c2c;">{{data.role}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <!-- LOCATION INFO -->
+                    <td id="info-td" style="    font-family:Verdana, sans-serif;
+                    padding-top:0px;
+                    padding-bottom:2px;
+                    padding-left: 3px;
+                    padding-right:0;
+                    line-height:12px;
+                    border-bottom:3px solid rgb(149, 159, 255);
+                    color:#000000;
+                    font-size:10pt;
+                    vertical-align:top;" valign="top">
+        
+                        <!-- <span class="span-st"  >62 Vasileos Constantinou Street</span>
+                        <span style="color:green;" > â€¢ </span>
+                        <span class="span-st"> CY 3076, Cyprus</span> -->
+                        <span class="span-st" style="font-family:Verdana, sans-serif;font-size:10pt;color:#2c2c2c;"> 
+                        <!-- <span><br></span> -->
+                            <strong>
+                                {{data.company_name}}
+                                <!-- <span STYLE>G</span><span>RIZZLY</span> <span>E</span> <span>ENTERTAINMENT</span> -->
+                            </strong>   
+                        </span>
+                        <br>
+                    </td>   
+                </tr>	
+                <tr>
+                
+                    <!-- CONTACT INFO -->
+                    <td id="contact-td" style="font-family:Verdana, sans-serif;
+                    padding-top:0px;
+                    padding-bottom:0;
+                    padding-left: 3px;
+                    padding-right:0;
+                    line-height:18px;
+                    color:#000000;
+                    font-size:9pt;
+                    vertical-align:top;" valign="top">		
+                        <span class="span-st" style="font-family:Verdana, sans-serif;font-size:9pt;color:#2c2c2c;">
+                            <img class="icon" alt="mobile-icon" src="https://img.icons8.com/fluent/48/000000/cell-phone.png" style="border:0;height:12px;width:12px;" width="12" height="12" border="0">&nbsp;&nbsp;{{data.cy_mob}}
+                            <img class="icon" alt="flag-icon" src="https://img.icons8.com/color/48/000000/cyprus-circular.png" style="border:0;height:12px;width:12px;" width="12" height="12" border="0">
+                            <!-- <span><br></span> -->
+                                |
+                        </span>
+                        
+                        {% if data.us_mob %}
+                            <span class="span-st" style="font-family:Verdana, sans-serif;font-size:9pt;color:#2c2c2c;">
+                                <img class="icon" alt="phone-icon" src="https://img.icons8.com/offices/48/000000/phone.png" style="border:0;height:12px;width:12px;" width="12" height="12" border="0">&nbsp;&nbsp;{{data.us_mob}}
+                                <img class="icon" alt="flag-icon" src="https://img.icons8.com/color/48/000000/usa-circular.png" style="border:0;height:12px;width:12px;" width="12" height="12" border="0">
+                                <span><br></span>
+                            </span>	
+
+                        {% elif data.work_num %}
+                            <span class="span-st" style="font-family:Verdana, sans-serif;font-size:9pt;color:#2c2c2c;">
+                                <img class="icon" alt="phone-icon" src="https://img.icons8.com/color/48/000000/ringing-phone.png" style="border:0;height:12px;width:12px;" width="12" height="12" border="0">&nbsp;&nbsp;{{data.work_num}}
+                                <span><br></span>
+                            </span>		
+                        
+                        {% endif %}
+
+                        <span class="span-st" style="font-family:Verdana, sans-serif;font-size:9pt;color:#2c2c2c;">
+                            <img class="icon" alt="email-icon" src="https://img.icons8.com/color/48/000000/email.png" style="border:0;height:12px;width:12px;" width="12" height="12" border="0">&nbsp;&nbsp;{{data.email}}
+                            <span><br></span>
+                        </span>     
+                        <span style="font-family:Verdana, sans-serif; font-size:9pt;">
+                            <img class="icon" alt="website-icon" src="https://img.icons8.com/color/48/000000/domain--v1.png" style="border:0;height:12px;width:12px;" width="12" height="12" border="0">&nbsp;
+                            <a href="http://www.grizzlyglobal.net" target="_blank" rel="noopener" style="text-decoration:none;">
+                                {{data.website}}
+                                <!-- <span style="font-size:10pt;font-family:Verdana, sans-serif;color:#7e2c55">www.grizzlyglobal.net</span> -->
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+        
+                    <!-- SOCIAL MEDIA -->
+                    <td id="social-media-td" style="padding-top:0px; padding-bottom:0; padding-left:1px; padding-right:0;vertical-align:top;" valign="top">		
+                        
+                        {% if data.links['facebook'] %}
+                            <span>
+                                <a href="{{data.links['facebook']}}" target="_blank" rel="noopener">
+                                <img class="social-icons" alt="facebook icon" src="https://img.icons8.com/fluent/48/000000/facebook-new.png" style="border:0;height:16px;width:16px" width="16" border="0"></a>&nbsp;
+                            </span>
+                        {% endif %}
+                        
+                        {% if data.links['instagram'] %}
+                            <span>
+                                <a href="{{data.links['instagram']}}" target="_blank" rel="noopener">
+                                <img class="social-icons" alt="instagram icon" src="https://img.icons8.com/fluent/48/000000/instagram-new.png" style="border:0;height:16px;width:16px" width="16" border="0"></a>&nbsp;
+                            </span>
+                        {% endif %}
+
+                        {% if data.links['youtube'] %}
+                            <span>
+                                <a href="{{data.links['youtube']}}" target="_blank" rel="noopener">
+                                <img class="social-icons" alt="youtube icon" src="https://img.icons8.com/fluent/48/000000/youtube-play.png" style="border:0;height:16px;width:16px" width="16" border="0"></a>&nbsp;
+                            </span>
+                        {% endif %}
+
+                        {% if data.links['linkedin'] %}
+                            <span>
+                                <a href="{{data.links['linkedin']}}" target="_blank" rel="noopener">
+                                <img class="social-icons" alt="linkedin icon" src="https://img.icons8.com/color/48/000000/linkedin.png" style="border:0;height:16px;width:16px" width="16" border="0"></a>&nbsp;
+                            </span>
+                        {% endif %}
+
+                        {% if data.links['twitter'] %}
+                            <span>
+                                <a href="{{data.links['twitter']}}" target="_blank" rel="noopener">
+                                <img class="social-icons" alt="twitter icon" src="https://img.icons8.com/fluent/48/000000/twitter.png" style="border:0;height:16px;width:16px" width="16" border="0"></a>&nbsp;
+                            </span>
+                        {% endif %}
+
+                    </td>
+                </tr>
+            </table>
+
+                <br><br>
+            {% endfor %}
+
+
+    </body>
+    
+    
+    
+  
+    </html>
