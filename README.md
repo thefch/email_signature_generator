@@ -7,7 +7,7 @@ Only tested with Microsoft Outlook (Desktop)
 <b>Copy</b> and <b>paste</b> from the HTML page into Outlook
 
 ##### `data.csv`
-put any info that are required in the signature for each person
+ - put any info that are required in the signature for each person
 
 ##### `settings.csv`
  - put the paths for each template that would be used and group them accordingly
