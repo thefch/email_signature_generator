@@ -17,7 +17,7 @@ Only tested with Microsoft Outlook (Desktop)
  - <b>leave blank what is not needed</b>
 
 ##### logos
- - the lgos needs to be replaces accordingly from `static\assets`
+ - the logos needs to be replaces accordingly from `static\assets`
 
 
 > <b>Keep</b> the `data.csv` file safe!
