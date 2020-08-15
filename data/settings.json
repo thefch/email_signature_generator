@@ -1,0 +1,44 @@
+{
+	"options":[],
+	
+	"links":{
+		"company-name1":{
+			"facebook":"", 
+			"twitter":"",
+			"instagram":"",
+			"youtube":"",
+			"linkedin":"",
+			"website":""
+		},
+		"company-name2":{
+			"facebook":"", 
+			"twitter":"",
+			"instagram":"",
+			"youtube":"",
+			"linkedin":"",
+			"website":""
+		},
+		"company-name3":{
+			"facebook":"", 
+			"twitter":"",
+			"instagram":"",
+			"youtube":"",
+			"linkedin":"",
+			"website":""
+		}
+	},
+	"paths":{
+		"company-name1":{
+			"one":"",
+			"many":""
+		},
+		"company-name2":{
+			"one":"",
+			"many":""
+		},
+		"company-name3":{
+			"one":"",
+			"many":""
+		}
+	}
+}
