@@ -21,3 +21,7 @@ Only tested with Microsoft Outlook (Desktop)
 
 
 > <b>Keep</b> the `data.csv` file safe!
+
+
+<br><br>
+>if there is a problem when copying and pasting the signature on outlook, try copying to a word document and then outlook
