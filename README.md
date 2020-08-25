@@ -24,4 +24,4 @@ Only tested with Microsoft Outlook (Desktop)
 
 
 <br><br>
->if there is a problem when copying and pasting the signature on outlook, try copying to a word document and then outlook
+>if there is a styling problem when copying and pasting the signature on outlook, try copying to a word document and then outlook
