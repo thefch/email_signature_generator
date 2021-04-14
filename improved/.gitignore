@@ -1,7 +1,7 @@
-/data
-/data/
-/data/data.csv
-data.csv
+#/data
+#/data/
+#/data/data.csv
+#data.csv
 
 /output.pdf
 output_*.pdf
