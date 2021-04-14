@@ -1,11 +1,20 @@
-<html>
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-        <title>Email signature template</title>
-    </head>        
-    
+<html><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+            <!-- <link type="text/css" rel="stylesheet" href="temp2_files/style2.css"> -->
+        <title>Email signature template</title></head>
+        
+        
         <body>
-            <table id="table-content" style="    font-family: Verdana, sans-serif;
+                        
+            <form>
+                <input type=button name=print value="Print page" onClick="window.print()">
+            </form>
+            <br><br>
+
+            
+            {% for data in entries %}
+    
+                <table id="table-content" style="    font-family: Verdana, sans-serif;
                 width:530px;
                 font-size:10pt;
                 color:#7e2c55;" cellspacing="4" cellpadding="0">
@@ -158,7 +167,11 @@
                     </td>
                 </tr>
             </table>
-    
+
+                <br><br>
+            {% endfor %}
+
+
     </body>
     
     

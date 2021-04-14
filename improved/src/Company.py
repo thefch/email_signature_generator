@@ -1,17 +1,16 @@
 class Company:
 
-    def __init__(self, name_: str, slug_: str, template_single_path_: str, template_all_path_: str, social_links_: []):
+    def __init__(self, name_: str, slug_: str, template_name_: str, social_media_: {}):
         self.name = name_
         self.slug = slug_
-        self.template_single_path = template_single_path_
-        self.template_all_path = template_all_path_
-        self.social_links = social_links_
+        self.template_name = template_name_
+        self.social_media = social_media_
 
     def __str__(self):
-        return "%s %s %s" % (self.name, self.slug, self.social_links)
+        return "%s %s %s" % (self.name, self.slug, self.social_media)
 
     def __repr__(self):
-        return "%s %s %s" % (self.name, self.slug, self.social_links)
+        return "%s %s %s" % (self.name, self.slug, self.social_media)
 
 
 """

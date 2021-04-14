@@ -4,22 +4,37 @@
 	"companies-info":{
 		"company-name1":{
 			"slug":"comp-name1",
-			"template_single":"comp-name1-single",
-			"template_all":"comp-name1-all",
-			"social":{
+			"template_name":"comp-name1",
+			"social_links":{
+				"facebook":"facebook.com",
+				"twitter":"twitter.com",
+				"instagram":"insta.com",
+				"youtube":"utube.com",
+				"linkedin":"ll.com",
+				"website":"ww.com"
+			},
+			"social_icons": {
+				"facebook":"https://img.icons8.com/fluent/48/000000/facebook-new.png",
+				"twitter":"https://img.icons8.com/fluent/48/000000/twitter.png",
+				"instagram":"https://img.icons8.com/fluent/48/000000/instagram-new.png",
+				"youtube":"https://img.icons8.com/fluent/48/000000/youtube-play.png",
+				"linkedin":"https://img.icons8.com/color/48/000000/linkedin.png",
+				"website":"https://img.icons8.com/color/48/000000/domain--v1.png"
+			}
+		},
+		"company-name2":{
+			"slug":"",
+			"template_name":"",
+			"social_links":{
 				"facebook":"", 
 				"twitter":"",
 				"instagram":"",
 				"youtube":"",
 				"linkedin":"",
 				"website":""
-			}
-		},
-		"company-name2":{
-			"slug":"comp-name1",
-			"template":"",
-			"social":{
-				"facebook":"", 
+			},
+			"social_icons": {
+				"facebook":"https://img.icons8.com/fluent/48/000000/facebook-new.png",
 				"twitter":"",
 				"instagram":"",
 				"youtube":"",
@@ -28,10 +43,18 @@
 			}
 		},
 		"company-name3":{
-			"slug":"comp-name1",
-			"template":"",
-			"social":{
+			"slug":"",
+			"template_name":"",
+			"social_links":{
 				"facebook":"", 
+				"twitter":"",
+				"instagram":"",
+				"youtube":"",
+				"linkedin":"",
+				"website":""
+			},
+			"social_icons": {
+				"facebook":"https://img.icons8.com/fluent/48/000000/facebook-new.png",
 				"twitter":"",
 				"instagram":"",
 				"youtube":"",
@@ -40,18 +63,10 @@
 			}
 		}
 	},
-	"paths":{
-		"company-name1":{
-			"one":"",
-			"many":""
-		},
-		"company-name2":{
-			"one":"",
-			"many":""
-		},
-		"company-name3":{
-			"one":"",
-			"many":""
-		}
+	"country_icons": {
+		"CY": "https://img.icons8.com/color/48/000000/cyprus-circular.png",
+		"BH": "https://www.flaticon.com/svg/vstatic/svg/197/197521.svg?token=exp=1618419638~hmac=6dacecda45cbaa66d7272dbcabcf1cca",
+		"US": "https://img.icons8.com/color/48/000000/usa-circular.png"
 	}
+
 }
