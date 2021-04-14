@@ -1,0 +1,9 @@
+<h1>Select templates(Company):</h1>
+
+{% for i in companies%}
+    <form action="{{ url_for('show_entries',company_slug=i.slug) }}" method="POST">
+        <li>
+            <input type="submit" value="{{i.name}}">
+        </li>
+    </form>
+{% endfor %}

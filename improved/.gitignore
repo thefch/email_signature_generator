@@ -6,3 +6,7 @@ data.csv
 /output.pdf
 output_*.pdf
 output.pdf
+
+venv/
+
+.idea/

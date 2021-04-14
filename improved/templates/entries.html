@@ -1,0 +1,20 @@
+<head>
+    <title>
+        Email signature generator
+    </title>
+</head>
+
+<h1>Email signatures:</h1>
+{% for entry in entries %}
+    <form action="{{ url_for('show_signature_of_entry',company_slug=entry.company_slug,entry_id=entry.id) }}" method="POST">
+        <li>
+            <input type="submit" name="name" value="{{ entry['name'] }}">
+            <input type="hidden" name="template" value="{{option}}">
+        </li>
+    </form>
+{% endfor %}
+
+<form action="{{url_for('show_all_signatures_of_company',company_slug=company_slug)}}" method="POST">
+    <input type='submit' name='print' value="Show all">
+{#    <input type='hidden' name='template' value="{{option}}">#}
+</form>
