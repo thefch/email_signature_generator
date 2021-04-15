@@ -1,9 +1,0 @@
-<h1>Select templates:</h1>
-
-{% for i in options%}
-<form action="{{ url_for('index') }}" method="POST">
-    <li>
-        <input type="submit" name="option" value="{{i}}">
-    </li>
-</form>
-{% endfor %}

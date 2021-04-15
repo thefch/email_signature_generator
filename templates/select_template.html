@@ -1,0 +1,17 @@
+{% if msg %}
+    <h3 style="color: red">{{ msg }}</h3>
+{% endif %}
+
+<h1>Select templates(Company):</h1>
+
+{% for i in companies%}
+    <form action="{{ url_for('show_entries',company_slug=i.slug) }}" method="POST">
+        <li>
+            <input type="submit" value="{{i.name}}">
+        </li>
+    </form>
+{% endfor %}
+
+<form action="{{ url_for('add_entry') }}" method="POST">
+    <input type="submit" value="Add new entry">
+</form>
