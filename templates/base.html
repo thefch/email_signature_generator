@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    {% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/mystyle.css') }}">
+    <title>{% block title %}{% endblock %} - Email Signature Generator</title>
+    {% endblock %}
+  </head>
+  <body>
+    <div id="content">{% block content %}{% endblock %}</div>
+    <div id="footer">
+      {% block footer %}
+          <script>
+
+            function copyToClipboard(id_) {
+               name = "table-content"+id_;
+               let el = document.getElementById(name);
+               var range = document.createRange();
+               range.selectNode(el);
+               window.getSelection().addRange(range);
+
+              try {
+                // Now that we've selected the anchor text, execute the copy command
+                var successful = document.execCommand('copy');
+                var msg = successful ? 'successful' : 'unsuccessful';
+                alert('Copy command was ' + msg);
+              } catch(err) {
+                alert('Oops, unable to copy');
+              }
+
+              // Remove the selections - NOTE: Should use
+              // removeRange(range) when it is supported
+              window.getSelection().removeAllRanges();
+            }
+        </script>
+      {% endblock %}
+    </div>
+  </body>
+</html>
