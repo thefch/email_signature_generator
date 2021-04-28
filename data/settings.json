@@ -2,16 +2,16 @@
 	"options":[],
 	
 	"companies-info":{
-		"company-name1":{
-			"slug":"comp-name1",
-			"template_name":"comp-name1",
+		"Grizzly Entertainment":{
+			"slug":"grizzly",
+			"template_name":"grizzly",
 			"social_links":{
-				"facebook":"facebook.com",
-				"twitter":"twitter.com",
-				"instagram":"insta.com",
-				"youtube":"utube.com",
-				"linkedin":"ll.com",
-				"website":"ww.com"
+				"facebook":"https://www.facebook.com/TeamGrizzlyENT",
+				"twitter":"https://twitter.com/TeamGrizzlyENT",
+				"instagram":"https://www.instagram.com/TeamGrizzlyENT/",
+				"youtube":"https://www.youtube.com/channel/UCkqreWk4pp4JS_Vo86SloDA",
+				"linkedin":"https://www.linkedin.com/company/team-grizzly",
+				"website":"grizzlyglobal.net"
 			},
 			"social_icons": {
 				"facebook":"https://img.icons8.com/fluent/48/000000/facebook-new.png",
@@ -22,8 +22,8 @@
 				"website":"https://img.icons8.com/color/48/000000/domain--v1.png"
 			}
 		},
-		"company-name2":{
-			"slug":"",
+		"Monarch":{
+			"slug":"monarch",
 			"template_name":"",
 			"social_links":{
 				"facebook":"", 
@@ -42,8 +42,8 @@
 				"website":""
 			}
 		},
-		"company-name3":{
-			"slug":"",
+		"Three Mushrooms":{
+			"slug":"threemushrooms",
 			"template_name":"",
 			"social_links":{
 				"facebook":"", 

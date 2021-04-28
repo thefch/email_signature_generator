@@ -1,7 +1,9 @@
 /data
 /data/
-/data/data.csv
+/data/__data.csv
 data.csv
+db.sqlite
+db_backup.sqlite
 
 /output.pdf
 output_*.pdf

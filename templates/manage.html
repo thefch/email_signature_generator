@@ -4,8 +4,17 @@
     <meta charset="UTF-8">
     <title>Manage</title>
 </head>
-<body>
 
+<body>
+    <h1>Manage</h1>
+    <hr>
+
+    <h3>Add new company - slug</h3>
+    <form action="{{ url_for('add_new_company_slug') }}" method="POST">
+        <button type="submit" >Do it</button>
+    </form>
+
+    <hr>
 
 </body>
 </html>

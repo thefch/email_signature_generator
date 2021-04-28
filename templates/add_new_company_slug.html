@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>Add new company - slug</title>
+</head>
+
+<body>
+<div style="width: 50%; padding-left:100px; ">
+    <h1>Add new company - slug</h1>
+    <hr>
+
+    <form>
+
+
+        <div class="form-group">
+            <label for="inputCompanyName">Company Name</label>
+            <input type="text" class="form-control" id="inputCompanyName" name="CompanyName" aria-describedby="inputCompanyName" onchange="updateSlug(this)">
+            <small id="companyNameHelp" class="form-text text-muted">Company's name changes accordingly with the company slug</small>
+        </div>
+
+        <div class="form-group">
+            <label for="inputCompanySlug">Company's slug</label>
+            <input type="text" class="form-control" id="inputSlugName" name="SlugName" aria-describedby="inputSlugName" readonly="readonly">
+            <small id="companySlugHelp" class="form-text text-muted">Slug word is generated automatically according to the company's name</small>
+        </div>
+
+        <div class="form-group">
+            <label for="inputCompanyName">Template Name</label>
+            <input type="text" class="form-control" id="inputTemplateName" name="TemplateName" aria-describedby="inputTemplateName" readonly="readonly">
+            <small id="templateNameHelp" class="form-text text-muted">The name of the html file that the template is saved in, is the same as the slug name to avoid collisions</small>
+        </div>
+
+        <h5>Social Media</h5>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+              <span class="input-group-text" id="facebook-link"><i class="fa fa-facebook" aria-hidden="true"></i></span>
+          </div>
+          <input type="text" class="form-control" placeholder="Facebook link" aria-label="Facebook" aria-describedby="">
+        </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+              <span class="input-group-text" id="instagram-link"><i class="fa fa-instagram" aria-hidden="true"></i></span>
+          </div>
+          <input type="text" class="form-control" placeholder="Instagram link" aria-label="Instagram" aria-describedby="">
+        </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+              <span class="input-group-text" id="twitter-link"><i class="fa fa-twitter" aria-hidden="true"></i></span>
+          </div>
+          <input type="text" class="form-control" placeholder="Twitter link" aria-label="Twitter" aria-describedby="">
+        </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+              <span class="input-group-text" id="Youtube-link"><i class="fa fa-youtube" aria-hidden="true"></i></span>
+          </div>
+          <input type="text" class="form-control" placeholder="Youtube link" aria-label="Youtube" aria-describedby="">
+        </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+              <span class="input-group-text" id="Linkedin-link"><i class="fa fa-linkedin" aria-hidden="true"></i></span>
+          </div>
+          <input type="text" class="form-control" placeholder="Linkedin link" aria-label="Linkedin" aria-describedby="">
+        </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+              <span class="input-group-text" id="website-link"><i class="fa fa-globe" aria-hidden="true"></i></span>
+          </div>
+          <input type="text" class="form-control" placeholder="website link" aria-label="website" aria-describedby="">
+        </div>
+
+        <hr>
+
+    </form>
+</div>
+</body>
+</html>
+
+<script>
+    function updateSlug(el){
+        let name = el.value;
+        let slug = '';
+        for (let i = 0; i < name.length; i++) {
+            if(name[i] === ' '){
+                slug += '-';
+            }
+            else {
+                slug += name[i];
+            }
+        }
+
+        document.getElementById('inputSlugName').value = slug;
+        document.getElementById('inputTemplateName').value = slug;
+
+
+    }
+
+    function updateTemplateName(el){
+        document.getElementById('inputTemplateName').value = document.getElementById('inputSlugName').textContent;
+    }
+</script>

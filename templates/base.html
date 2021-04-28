@@ -1,39 +1,84 @@
 <!doctype html>
 <html>
-  <head>
+
+<head>
     {% block head %}
     <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/mystyle.css') }}">
     <title>{% block title %}{% endblock %} - Email Signature Generator</title>
     {% endblock %}
-  </head>
-  <body>
+</head>
+
+<body>
+
+    {% if msg %}
+        <div style="background-color: #BDB9A6"><h3>{{ msg }}</h3></div>
+    {% endif %}
+
+    <div class="switch-container">
+        Dark Mode<label class="switch"><input type="checkbox" onclick="toggleDarkMode()"/>    <div></div>
+    </label>
+    </div>
+    <br><br>
+    <div>
+        <input type="submit" onclick="printWindow()" value="Print"/><div></div>
+    </label>
+    </div>
+    <br>
+    <br>
+    <div></div>
     <div id="content">{% block content %}{% endblock %}</div>
     <div id="footer">
-      {% block footer %}
-          <script>
-
+        {% block footer %}
+        <script>
             function copyToClipboard(id_) {
-               name = "table-content"+id_;
-               let el = document.getElementById(name);
-               var range = document.createRange();
-               range.selectNode(el);
-               window.getSelection().addRange(range);
+                let name = "table-content" + id_;
+                let el = document.getElementById(name);
+                var range = document.createRange();
+                range.selectNode(el);
+                window.getSelection().addRange(range);
 
-              try {
-                // Now that we've selected the anchor text, execute the copy command
-                var successful = document.execCommand('copy');
-                var msg = successful ? 'successful' : 'unsuccessful';
-                alert('Copy command was ' + msg);
-              } catch(err) {
-                alert('Oops, unable to copy');
-              }
+                try {
+                    // Now that we've selected the anchor text, execute the copy command
+                    var successful = document.execCommand('copy');
+                    var msg = successful ? 'successful' : 'unsuccessful';
+                    alert('Copy command was ' + msg);
+                } catch (err) {
+                    alert('Oops, unable to copy');
+                }
 
-              // Remove the selections - NOTE: Should use
-              // removeRange(range) when it is supported
-              window.getSelection().removeAllRanges();
+                // Remove the selections - NOTE: Should use
+                // removeRange(range) when it is supported
+                window.getSelection().removeAllRanges();
             }
+
+            function toggleDarkMode() {
+                if (document.body.style.backgroundColor === "rgb(38, 38, 38)") {
+                    document.body.style.backgroundColor = "white";
+                } else {
+                    document.body.style.backgroundColor = "rgb(38, 38, 38)";
+                }
+                console.log(document.body.style.backgroundColor);
+            }
+
+            function printWindow() {
+                var buttons = document.getElementsByTagName('button');
+
+                //hide all buttons, print and show them back
+                for (let i = 0; i < buttons.length; i++) {
+                    let button = buttons[i];
+                    buttons[i].style.display="none";
+                }
+                window.print();
+                for (let i = 0; i < buttons.length; i++) {
+                    let button = buttons[i];
+                    buttons[i].style.display="inline-block";
+                }
+            }
+
+
         </script>
-      {% endblock %}
+        {% endblock %}
     </div>
-  </body>
+</body>
+
 </html>

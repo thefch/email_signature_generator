@@ -4,6 +4,11 @@
     </title>
 </head>
 
+<div style="background-color: #BDB9A6">
+    {% if msg %}
+        <h3>{{ msg }}</h3>
+    {% endif %}
+</div>
 <h1>Email signatures:</h1>
 {% for entry in entries %}
     <form action="{{ url_for('show_signature_of_entry',company_slug=entry.company_slug,entry_id=entry.id) }}" method="POST">
@@ -18,3 +23,5 @@
     <input type='submit' name='print' value="Show all">
 {#    <input type='hidden' name='template' value="{{option}}">#}
 </form>
+
+
