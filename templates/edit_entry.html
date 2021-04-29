@@ -1,104 +1,125 @@
-<head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <title>Add Entry</title>
-</head>
+{% extends "base.html" %} {% block title %}Add new entry{% endblock %} {% block head %} {{ super() }} {% endblock %}
+
+{% block content %}
+
+    <div style="width: 50%; padding-left:100px; ">
+        <h1>Edit Entry</h1>
+        <p><strong>Current Entry: </strong> {{ entry.id }} - {{ entry.name }} from {{ entry.company_slug }}</p>
+        <form action="{{ url_for('update_entry',company_slug=entry.company_slug, entry_id=entry.id) }}" method="POST">
+            <div class="form-group">
+                <label for="inputFullName">Full name</label>
+                <input type="text" class="form-control" id="inputFullName" name="FullName" aria-describedby="emailHelp"
+                       placeholder="Enter full name" value="{{ entry.name }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="inputAltName">Alt. Name</label>
+                <input type="text" class="form-control" id="inputAltName" name="AltName" aria-describedby="altNameHelp"
+                       placeholder="Enter Alternative name" value="{{ entry.alt_name }}">
+                <small id="altNameHelp" class="form-text text-muted">If the entry does not have a name (eg.
+                    Support)</small>
+            </div>
 
 
-<body>
-<div style="width: 50%; padding-left:100px; ">
-    <h1>Edit Entry</h1>
-    <p><strong>Current Entry: </strong> {{entry.id}} - {{entry.name}} from {{entry.company_slug}}</p>
-    <form action="{{ url_for('update_entry',company_slug=entry.company_slug, entry_id=entry.id) }}" method="POST">
-        <div class="form-group">
-            <label for="inputFullName">Full name</label>
-            <input type="text" class="form-control" id="inputFullName" name="FullName" aria-describedby="emailHelp" placeholder="Enter full name" value="{{entry.name}}" required>
-        </div>
+            <div class="form-group">
+                <label for="inputRole">Role</label>
+                <input type="text" class="form-control" id="inputRole" name="Role" aria-describedby="roleHelp"
+                       placeholder="Enter person's role" value="{{ entry.role }}" required>
+                <small id="altNameHelp" class="form-text text-muted">eg. Support team, Operations Assistant etc.</small>
+            </div>
 
-        <div class="form-group">
-            <label for="inputAltName">Alt. Name</label>
-            <input type="text" class="form-control" id="inputAltName" name="AltName" aria-describedby="altNameHelp" placeholder="Enter Alternative name" value="{{entry.alt_name}}">
-            <small id="altNameHelp" class="form-text text-muted">If the entry does not have a name (eg. Support)</small>
-        </div>
+            <div class="form-group">
+                <label for="inputEmailAddress">Email address</label>
+                <input type="email" class="form-control" id="inputEmailAddress" name="EmailAddress"
+                       aria-describedby="emailHelp" placeholder="Enter email" value="{{ entry.email }}" required>
+            </div>
 
+            <div class="form-group">
+                <label for="inputEmailAddress2">Secondary email address</label>
+                <input type="email" class="form-control" id="inputEmailAddress2" name="EmailAddress2"
+                       aria-describedby="emailHelp" placeholder="Enter secondary email" value="{{ entry.emai2 }}">
+                <small id="emailHelp" class="form-text text-muted">Fill if person has a secondary email that needs to be
+                    shown on the signature.</small>
+            </div>
 
-        <div class="form-group">
-            <label for="inputRole">Role</label>
-            <input type="text" class="form-control" id="inputRole" name="Role" aria-describedby="roleHelp" placeholder="Enter person's role" value="{{entry.role}}" required>
-            <small id="altNameHelp" class="form-text text-muted">eg. Support team, Operations Assistant etc.</small>
-        </div>
+            <div class="form-group">
+                <label for="inputPrimaryNum">Primary phone number</label>
+                <input type="text" class="form-control" id="inputPrimaryNum" name="PrimaryNum"
+                       aria-describedby="inputPrimaryNum" placeholder="Enter primary phone number"
+                       value="{{ entry.mob1 }}" required>
+                <small id="primaryNumHelp" class="form-text text-muted" style="color:red;"><strong>Include the country
+                    code</strong></small>
+            </div>
 
-        <div class="form-group">
-            <label for="inputEmailAddress">Email address</label>
-            <input type="email" class="form-control" id="inputEmailAddress" name="EmailAddress" aria-describedby="emailHelp" placeholder="Enter email" value="{{entry.email}}" required>
-        </div>
+            <div class="form-group">
+                <label for="inputSecondaryNum">Secondary phone number</label>
+                <input type="text" class="form-control" id="inputSecondaryNum" name="SecondaryNum"
+                       aria-describedby="inputSecondaryNum" placeholder="Enter secondary phone number"
+                       value="{{ entry.mob2 }}">
+                <small id="secondaryNumHelp" class="form-text text-muted"><strong>Include the country code.</strong>
+                    Fill if person has a secondary email that needs to be shown on the signature. </small>
+            </div>
 
-        <div class="form-group">
-            <label for="inputEmailAddress2">Secondary email address</label>
-            <input type="email" class="form-control" id="inputEmailAddress2" name="EmailAddress2" aria-describedby="emailHelp"  placeholder="Enter secondary email" value="{{entry.emai2}}">
-            <small id="emailHelp" class="form-text text-muted">Fill if person has a secondary email that needs to be shown on the signature.</small>
-        </div>
-
-        <div class="form-group">
-            <label for="inputPrimaryNum">Primary phone number</label>
-            <input type="text" class="form-control" id="inputPrimaryNum" name="PrimaryNum" aria-describedby="inputPrimaryNum" placeholder="Enter primary phone number" value="{{entry.mob1}}"  required>
-            <small id="primaryNumHelp" class="form-text text-muted" style="color:red;"><strong>Include the country code</strong></small>
-        </div>
-
-        <div class="form-group">
-            <label for="inputSecondaryNum">Secondary phone number</label>
-            <input type="text" class="form-control" id="inputSecondaryNum" name="SecondaryNum" aria-describedby="inputSecondaryNum" placeholder="Enter secondary phone number" value="{{entry.mob2}}" >
-            <small id="secondaryNumHelp" class="form-text text-muted"><strong>Include the country code.</strong> Fill if person has a secondary email that needs to be shown on the signature. </small>
-        </div>
-
-        <div class="form-group">
-            <label for="inputWorkNum">Work phone number</label>
-            <input type="text" class="form-control" id="inputWorkNum" name="WorkNum" aria-describedby="inputWorkNum" placeholder="Enter work phone number" value="{{entry.work_num}}">
-            <small id="workNumHelp" class="form-text text-muted"><strong>Include the country code.</strong></small>
-        </div>
+            <div class="form-group">
+                <label for="inputWorkNum">Work phone number</label>
+                <input type="text" class="form-control" id="inputWorkNum" name="WorkNum" aria-describedby="inputWorkNum"
+                       placeholder="Enter work phone number" value="{{ entry.work_num }}">
+                <small id="workNumHelp" class="form-text text-muted"><strong>Include the country code.</strong></small>
+            </div>
 
 
+            <div class="form-group">
+                <label for="inputCompanyName">Company Name</label>
+                <input type="text" class="form-control" id="inputCompanyName" name="CompanyName"
+                       aria-describedby="inputCompanyName" placeholder="Enter company's name"
+                       value="{{ entry.company_name }}" disabled>
+                <small id="companyNameHelp" class="form-text text-muted">Enter the company's name as it should be shown
+                    on the signature</small>
+            </div>
 
-        <div class="form-group">
-            <label for="inputCompanyName">Company Name</label>
-            <input type="text" class="form-control" id="inputCompanyName" name="CompanyName" aria-describedby="inputCompanyName" placeholder="Enter company's name" value="{{entry.company_name}}" disabled>
-            <small id="companyNameHelp" class="form-text text-muted">Enter the company's name as it should be shown on the signature</small>
-        </div>
+            <div class="form-group">
+                <label for="inputNickname">Nickname</label>
+                <input type="text" class="form-control" id="inputNickname" name="Nickname"
+                       aria-describedby="nicknameHelp" placeholder="Enter nickname" value="{{ entry.nickname }}">
+                <small id="nicknameHelp" class="form-text text-muted"><strong>Only if the template supports Nickname, it
+                    will be shown</strong></small>
+            </div>
 
-        <div class="form-group">
-            <label for="inputNickname">Nickname</label>
-            <input type="text" class="form-control" id="inputNickname" name="Nickname" aria-describedby="nicknameHelp" placeholder="Enter nickname" value="{{entry.nickname}}">
-            <small id="nicknameHelp" class="form-text text-muted"><strong>Only if the template supports Nickname, it will be shown</strong></small>
-        </div>
+            <div class="form-group">
+                <label for="inputWebsite">Website</label>
+                <input type="text" class="form-control" id="inputWebsite" name="Website" aria-describedby="websiteHelp"
+                       placeholder="Enter website" value="{{ entry.website }}" required>
+            </div>
 
-        <div class="form-group">
-            <label for="inputWebsite">Website</label>
-            <input type="text" class="form-control" id="inputWebsite" name="Website" aria-describedby="websiteHelp" placeholder="Enter website" value="{{entry.website}}" required>
-        </div>
+            <div class="form-group">
+                <label for="inputWebsite2">Secondary Website</label>
+                <input type="text" class="form-control" id="inputWebsite2" name="Website2"
+                       aria-describedby="website2Help" placeholder="Enter website" value="{{ entry.website2 }}">
+                <small id="nicknameHelp" class="form-text text-muted"><strong>(Optional)</strong>Only if the template
+                    supports Nickname, it will be shown</small>
+            </div>
 
-        <div class="form-group">
-            <label for="inputWebsite2">Secondary Website</label>
-            <input type="text" class="form-control" id="inputWebsite2" name="Website2" aria-describedby="website2Help" placeholder="Enter website" value="{{entry.website2}}">
-            <small id="nicknameHelp" class="form-text text-muted"><strong>(Optional)</strong>Only if the template supports Nickname, it will be shown</small>
-        </div>
+            <div class="form-group">
+                <label for="inputCompanySlug">Select company slug</label>
+                <select class="form-control" id="inputCompanySlug" name="CompanySlug" required>
+                    <option selected disabled>{{ entry.company_slug }} </option>
+                </select>
+                <small id="companySlugHelp" class="form-text text-muted">Slug can not be changed, to avoid errors with
+                    other templates</small>
 
-        <div class="form-group">
-            <label for="inputCompanySlug">Select company slug</label>
-            <select class="form-control" id="inputCompanySlug" name="CompanySlug" required>
-                <option selected disabled>{{entry.company_slug}} </option>
-            </select>
-            <small id="companySlugHelp" class="form-text text-muted">Slug can not be changed, to avoid errors with other templates</small>
+            </div>
 
-        </div>
+            <p><strong>Note:</strong> all options should be related to the desired template. Options that are not in the
+                template will not automatically show up!</p>
 
-    <p><strong>Note:</strong> all options should be related to the desired template. Options that are not in the template will not automatically show up!</p>
-    <button type="submit" class="btn btn-primary">Save</button>
-    </form>
-    <form action="{{ url_for('delete_entry',company_slug=entry.company_slug, entry_id=entry.id) }}" method="POST">
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+
+        <br>
+        <form action="{{ url_for('delete_entry',company_slug=entry.company_slug, entry_id=entry.id) }}"
+              method="POST">
             <button type="submit" class="btn btn-danger">Delete</button>
-    </form>
+        </form>
+    </div>
 
-</div>
-</body>
+{% endblock %}

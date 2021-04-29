@@ -186,6 +186,40 @@ def add_new_company_slug():
     return render_template('add_new_company_slug.html')
 
 
+@app.route('/save_new_company_slug', methods=['POST'])
+def save_new_company_slug():
+    name = alt_name = role = primary_email_address = secondary_email_address = primary_number = secondary_number = \
+        work_number = company_name = nickname = primary_website = secondary_website = company_slug = None
+
+    read_successful = False
+    try:
+        company_name = request.form['CompanyName']
+        company_slug = request.form['CompanySlug']
+        template_name = request.form['TemplateName']
+        facebook_link = request.form['FacebookLink']
+        facebook_icon_link = request.form['FacebookIconLink']
+
+        instagram_link = request.form['InstagramLink']
+        instagram_icon_link = request.form['InstagramIconLink']
+
+        twitter_link = request.form['TwitterLink']
+        twitter_icon_link = request.form['TwitterIconLink']
+
+        youtube_link = request.form['YoutubeLink']
+        youtube_icon_link = request.form['YoutubeIconLink']
+
+        linkedin_link = request.form['LinkedinLink']
+        linkedin_icon_link = request.form['LinkedinIconLink']
+
+        website_link = request.form['WebsiteLink']
+        website_icon_link = request.form['WebsiteIconLink']
+
+        read_successful = True
+    except:
+        pass
+    return render_template('manage.html')
+
+
 def main():
     # manager.initialize_setting()
     app.run(debug=True)

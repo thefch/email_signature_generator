@@ -1,27 +1,32 @@
-<head>
-    <title>
-        Email signature generator
-    </title>
-</head>
+{% extends "base.html" %} {% block title %}Entries{% endblock %} {% block head %} {{ super() }} {% endblock %}
 
-<div style="background-color: #BDB9A6">
-    {% if msg %}
-        <h3>{{ msg }}</h3>
-    {% endif %}
-</div>
-<h1>Email signatures:</h1>
-{% for entry in entries %}
-    <form action="{{ url_for('show_signature_of_entry',company_slug=entry.company_slug,entry_id=entry.id) }}" method="POST">
-        <li>
-            <input type="submit" name="name" value="{{ entry['name'] }}">
-            <input type="hidden" name="template" value="{{option}}">
-        </li>
+{% block content %}
+
+    <div style="background-color: #BDB9A6">
+        {% if msg %}
+            <h3>{{ msg }}</h3>
+        {% endif %}
+    </div>
+    <h3>Email signatures:</h3>
+    {% for entry in entries %}
+        <form action="{{ url_for('show_signature_of_entry',company_slug=entry.company_slug,entry_id=entry.id) }}"
+              method="POST">
+
+            <div class="input-group mb-3">
+                {#            <input type="submit" name="name" value="{{ entry['name'] }}">#}
+                <li>
+                    <button type="submit" name="name" class="btn btn-light"
+                            value="{{ entry['name'] }}">{{ entry['name'] }}</button>
+                    <input type="hidden" name="template" value="{{ option }}">
+                </li>
+            </div>
+
+        </form>
+    {% endfor %}
+
+    <form action="{{ url_for('show_all_signatures_of_company',company_slug=company_slug) }}" method="POST">
+        <button type="submit" class="btn btn-success">Show all</button>
     </form>
-{% endfor %}
-
-<form action="{{url_for('show_all_signatures_of_company',company_slug=company_slug)}}" method="POST">
-    <input type='submit' name='print' value="Show all">
-{#    <input type='hidden' name='template' value="{{option}}">#}
-</form>
 
 
+{% endblock %}

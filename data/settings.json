@@ -1,72 +1,70 @@
 {
-	"options":[],
-	
-	"companies-info":{
-		"Grizzly Entertainment":{
-			"slug":"grizzly",
-			"template_name":"grizzly",
-			"social_links":{
-				"facebook":"https://www.facebook.com/TeamGrizzlyENT",
-				"twitter":"https://twitter.com/TeamGrizzlyENT",
-				"instagram":"https://www.instagram.com/TeamGrizzlyENT/",
-				"youtube":"https://www.youtube.com/channel/UCkqreWk4pp4JS_Vo86SloDA",
-				"linkedin":"https://www.linkedin.com/company/team-grizzly",
-				"website":"grizzlyglobal.net"
-			},
-			"social_icons": {
-				"facebook":"https://img.icons8.com/fluent/48/000000/facebook-new.png",
-				"twitter":"https://img.icons8.com/fluent/48/000000/twitter.png",
-				"instagram":"https://img.icons8.com/fluent/48/000000/instagram-new.png",
-				"youtube":"https://img.icons8.com/fluent/48/000000/youtube-play.png",
-				"linkedin":"https://img.icons8.com/color/48/000000/linkedin.png",
-				"website":"https://img.icons8.com/color/48/000000/domain--v1.png"
-			}
-		},
-		"Monarch":{
-			"slug":"monarch",
-			"template_name":"",
-			"social_links":{
-				"facebook":"", 
-				"twitter":"",
-				"instagram":"",
-				"youtube":"",
-				"linkedin":"",
-				"website":""
-			},
-			"social_icons": {
-				"facebook":"https://img.icons8.com/fluent/48/000000/facebook-new.png",
-				"twitter":"",
-				"instagram":"",
-				"youtube":"",
-				"linkedin":"",
-				"website":""
-			}
-		},
-		"Three Mushrooms":{
-			"slug":"threemushrooms",
-			"template_name":"",
-			"social_links":{
-				"facebook":"", 
-				"twitter":"",
-				"instagram":"",
-				"youtube":"",
-				"linkedin":"",
-				"website":""
-			},
-			"social_icons": {
-				"facebook":"https://img.icons8.com/fluent/48/000000/facebook-new.png",
-				"twitter":"",
-				"instagram":"",
-				"youtube":"",
-				"linkedin":"",
-				"website":""
-			}
-		}
-	},
-	"country_icons": {
-		"CY": "https://img.icons8.com/color/48/000000/cyprus-circular.png",
-		"BH": "https://www.flaticon.com/svg/vstatic/svg/197/197521.svg?token=exp=1618419638~hmac=6dacecda45cbaa66d7272dbcabcf1cca",
-		"US": "https://img.icons8.com/color/48/000000/usa-circular.png"
-	}
-
+  "options": [],
+  "companies-info": {
+    "Grizzly Entertainment": {
+      "slug": "grizzly",
+      "template_name": "grizzly",
+      "social_links": {
+        "facebook": "https://www.facebook.com/TeamGrizzlyENT",
+        "twitter": "https://twitter.com/TeamGrizzlyENT",
+        "instagram": "https://www.instagram.com/TeamGrizzlyENT/",
+        "youtube": "https://www.youtube.com/channel/UCkqreWk4pp4JS_Vo86SloDA",
+        "linkedin": "https://www.linkedin.com/company/team-grizzly",
+        "website": "grizzlyglobal.net"
+      },
+      "social_icons": {
+        "facebook": "https://img.icons8.com/fluent/48/000000/facebook-new.png",
+        "twitter": "https://img.icons8.com/fluent/48/000000/twitter.png",
+        "instagram": "https://img.icons8.com/fluent/48/000000/instagram-new.png",
+        "youtube": "https://img.icons8.com/fluent/48/000000/youtube-play.png",
+        "linkedin": "https://img.icons8.com/color/48/000000/linkedin.png",
+        "website": "https://img.icons8.com/color/48/000000/domain--v1.png"
+      }
+    },
+    "Monarch": {
+      "slug": "monarch",
+      "template_name": "",
+      "social_links": {
+        "facebook": "",
+        "twitter": "",
+        "instagram": "",
+        "youtube": "",
+        "linkedin": "",
+        "website": ""
+      },
+      "social_icons": {
+        "facebook": "https://img.icons8.com/fluent/48/000000/facebook-new.png",
+        "twitter": "",
+        "instagram": "",
+        "youtube": "",
+        "linkedin": "",
+        "website": ""
+      }
+    },
+    "Three Mushrooms": {
+      "slug": "threemushrooms",
+      "template_name": "",
+      "social_links": {
+        "facebook": "",
+        "twitter": "",
+        "instagram": "",
+        "youtube": "",
+        "linkedin": "",
+        "website": ""
+      },
+      "social_icons": {
+        "facebook": "https://img.icons8.com/fluent/48/000000/facebook-new.png",
+        "twitter": "",
+        "instagram": "",
+        "youtube": "",
+        "linkedin": "",
+        "website": ""
+      }
+    }
+  },
+  "country_icons": {
+    "CY": "https://img.icons8.com/color/48/000000/cyprus-circular.png",
+    "BH": "https://www.flaticon.com/svg/vstatic/svg/197/197521.svg?token=exp=1618419638~hmac=6dacecda45cbaa66d7272dbcabcf1cca",
+    "US": "https://img.icons8.com/color/48/000000/usa-circular.png"
+  }
 }

@@ -1,29 +1,44 @@
-{% if msg %}
-    <h3 style="color: red">{{ msg }}</h3>
-{% endif %}
+{% extends "base.html" %} {% block title %}Index{% endblock %} {% block head %} {{ super() }} {% endblock %}
 
-<h1>Select templates(Company):</h1>
+{% block content %}
 
-{% for i in companies%}
-    <form action="{{ url_for('show_entries',company_slug=i.slug) }}" method="POST">
-        <li>
-            <input type="submit" value="{{i.name}}">
-        </li>
-    </form>
-{% endfor %}
+    {% if msg %}
+        <h3 style="color: red">{{ msg }}</h3>
+    {% endif %}
 
-<form action="{{ url_for('add_entry') }}" method="POST">
-    <input type="submit" value="Add new entry">
-</form>
+    <h1>Select templates(Company):</h1>
 
-<form action="{{ url_for('manage') }}" method="POST">
-    <input type="submit" value="Manage">
-</form>
+    {% for i in companies %}
+        <form action="{{ url_for('show_entries',company_slug=i.slug) }}" method="POST">
+            <li>
+                {#            <input class="" type="submit" value="{{i.name}}">#}
+                <button type="submit" class="btn btn-light" value="{{ i.name }}">{{ i.name }}</button>
+            </li>
+            <br>
 
-<br>
-<div>
-    <h3>TODO</h3>
-    <li>Able to edit social icons later</li>
-    <li>Able to edit social links later</li>
-    <li>Add more flag icons accordingly</li>
-</div>
+        </form>
+    {% endfor %}
+
+    <div class="input-group mb-3">
+        <form action="{{ url_for('add_entry') }}" method="POST">
+            <button type="submit" class="btn btn-primary">Add new entry</button>
+        </form>
+    </div>
+    <div class="input-group mb-3">
+
+        <form action="{{ url_for('manage') }}" method="POST">
+            <button type="submit" class="btn btn-secondary">Manage</button>
+        </form>
+    </div>
+    <br>
+    <div>
+        <h3>TODO</h3>
+        <li>Able to edit social icons later</li>
+        <li>Able to edit social links later</li>
+        <li>Add more flag icons accordingly</li>
+        <li>View all info about a company</li>
+        <li>Updating icon links or social media links need to update the person entries too</li>
+
+    </div>
+
+{% endblock %}
